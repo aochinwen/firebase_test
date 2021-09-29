@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <title>Sign Up</title>
+        
+        
+    </head>
+    <body>
+        <div>
+            <h3>Sign Up Page</h3>
+            <label for="email">EMAIL</label>
+            <input type="email" placeholder ="type your email" id='email'>
+            <br>
+            <label for="password">PASSWORD</label>
+            <input type="password" placeholder="enter your password" id='password'>
+            <br>
+            <button id='signup'>Sign Up</button>
+        </div>
+        
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+        <script>
+            // Import the functions you need from the SDKs you need
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+          
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+              apiKey: "AIzaSyCRE_HMgmjYsvb_btcVYc-_Ly7MTjMtSk4",
+              authDomain: "taxiwayclosure.firebaseapp.com",
+              projectId: "taxiwayclosure",
+              storageBucket: "taxiwayclosure.appspot.com",
+              messagingSenderId: "697609967663",
+              appId: "1:697609967663:web:eab8fba0431c692c004eda",
+              measurementId: "G-DP1DMX86LC"
+            };
+          
+            // Initialize Firebase
+            const app = firebase.initializeApp(firebaseConfig);
+            //const analytics = firebase.getAnalytics(app);
+            document.getElementById('signup').addEventListener('click',signUpUser)
+
+            function signUpUser(){
+                let email = document.getElementById('email').value;
+                let password = document.getElementById('password').value;
+
+                firebase.auth().createUserWithEmailAndPassword(email, password).catch(e=>{
+                    console.log(e)
+                })
+            }
+
+            firebase.auth().onAuthStateChanged(user=>{
+                if(user){
+                    console.log(user)
+                } else {}
+            })
+          </script>
+
+    </body>
+</html>
