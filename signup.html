@@ -3,14 +3,23 @@
     <head>
         <meta charset='UTF-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styles.css">
+
+        <!--import fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&family=Space+Mono&display=swap" rel="stylesheet">
         <title>Sign Up</title>
         
         
     </head>
     <body>
-        <div>
-            <h3>Sign Up Page</h3>
+        <nav>
+            <a href="login.html">Log In</a>
+            <a href="signup.html">Sign Up</a>
+        </nav>
+        <div id="signUpScreen">
+            <h1>Sign Up Page</h1>
             <label for="email">EMAIL</label>
             <input type="email" placeholder ="type your email" id='email'>
             <br>
@@ -19,6 +28,7 @@
             <br>
             <button id='signup'>Sign Up</button>
         </div>
+        <div id="emailVerification">Email verification sent! Please verify.</div>
         
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
@@ -44,12 +54,21 @@
             const app = firebase.initializeApp(firebaseConfig);
             //const analytics = firebase.getAnalytics(app);
             document.getElementById('signup').addEventListener('click',signUpUser)
+            document.getElementById('emailVerification').style.display='none'
 
             function signUpUser(){
                 let email = document.getElementById('email').value;
                 let password = document.getElementById('password').value;
 
-                firebase.auth().createUserWithEmailAndPassword(email, password).catch(e=>{
+                firebase.auth().createUserWithEmailAndPassword(email, password)
+                    .then(()=> {
+                        firebase.auth().currentUser.sendEmailVerification()
+                        .then(()=> {
+                            document.getElementById('signUpScreen').style.display='none';
+                            document.getElementById('emailVerification').style.display='block';
+                        })
+                    })
+                    .catch(e=>{
                     console.log(e)
                 })
             }
