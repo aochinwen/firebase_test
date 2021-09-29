@@ -75,6 +75,8 @@
                     window.location.href = "map.html";
                 }
                 else{
+                    document.getElementById("userDetails").innerHTML =
+                `<p>Hello ${user.email}, please verify your email </p>`
                 }})
                 .catch(e=>{
                     showErrorMessage();
@@ -119,7 +121,7 @@
                     console.log(user)
                     document.getElementById('logInScreen').style.display='none';
                     document.getElementById('dashboard').style.display = 'block';
-                    showUserDetails(user);
+                    //showUserDetails(user);
                     
                     }
                     
