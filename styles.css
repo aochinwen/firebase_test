@@ -1,0 +1,159 @@
+
+#color1{
+    background-color: #594A1D;
+}
+#color2{
+    background-color: #D99A4E;
+}
+#color3{
+    background-color: #BF9A78;
+}
+#color4{
+    background-color: #F2E8DF;
+}
+#color5{
+    background-color: #A68877;
+}
+body {
+    vertical-align:auto
+}
+
+.color li{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    text-align: center;
+    color: whitesmoke;
+    font-weight:700;
+    
+}
+
+div{
+    position: relative;
+    padding: auto;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Roboto mono';
+}
+
+.color li:hover {
+    color: red;
+    border: 2px dashed darkgray;
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+}
+
+.font li{
+    display: inline-block;
+    margin: 20px;
+}
+
+.italic {
+    font-style:italic;
+}
+
+.strong{
+    font-weight: bold;
+    
+}
+
+.font1 {
+    font-family: 'Roboto Mono';
+    font-size: 18px;
+}
+
+.font1 p{
+    font-family: 'Roboto Mono';
+}
+
+.font2 {
+    font-family: 'Space Mono';
+    font-size: 18px;
+}
+
+.font2 p{
+    font-family: 'Space Mono';
+}
+
+.font3 {
+    font-family: monospace;
+    font-size: 18px;
+}
+
+.font3 p{
+    font-family: monospace;
+}
+
+h2 {
+    text-transform:capitalize;
+    text-decoration: underline;
+    font-size: 30px;
+    text-align: center;
+}
+
+h1{
+    text-transform: capitalize;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+
+p {
+    font-family:'Roboto Mono','Space Mono',monospace;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+body {
+    font-family:'Roboto Mono','Space Mono',monospace;
+    margin-left: 150px;
+}
+
+
+.text-style div {
+    display:inline-block;
+    margin: 20px auto;
+    padding: 0 auto;
+    height: 250px;
+    width: 400px;
+    border: 2px dashed lightgray;
+    vertical-align: top;
+    justify-content: center;
+}
+
+.text-style li {
+    width: 250px;
+    position: relative;
+    margin: 0 auto;
+    text-align: left;
+    bottom: 10px;
+    
+}
+
+nav {
+    height: 100%;
+    width: 150px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #594A1D;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+nav a{
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+nav a:hover{
+    color: #F2E8DF;
+}
