@@ -15,9 +15,16 @@
     background-color: #A68877;
 }
 body {
-    vertical-align:auto
+    vertical-align: middle;
+    margin-left:auto;
+    margin-right:auto;
+    display: block;
+    justify-content: center;
 }
 
+button {
+    margin: 5px;
+}
 .color li{
     display: inline-block;
     width: 100px;

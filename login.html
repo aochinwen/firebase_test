@@ -24,6 +24,7 @@
             <br>
             
             <p>
+                <button onclick="googleLogin()"> Login with Google </button>
                 <button id='logInBtn'>Log In</button>
                 <button id='signUpBtn'>Sign Up</button>
             </p>
@@ -87,6 +88,19 @@
 
             function showErrorMessage(){
                 document.getElementById('logInScreen').innerHTML+="Wrong username or password";
+            }
+
+            function googleLogin(){
+
+            const provider = new firebase.auth.GoogleAuthProvider();
+
+            firebase.auth().signInWithPopup(provider)
+                    .then(result =>{
+                        const user = result.user;
+                        document.write(`Hello ${user.displayName}`);
+                        console.log(user)
+                    })
+                    .catch(console.log)
             }
 
             firebase.auth().onAuthStateChanged(user=>{
