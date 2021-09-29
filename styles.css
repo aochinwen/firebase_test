@@ -15,11 +15,11 @@
     background-color: #A68877;
 }
 body {
-    vertical-align: middle;
     margin-left:auto;
     margin-right:auto;
     display: block;
     justify-content: center;
+    
 }
 
 button {
