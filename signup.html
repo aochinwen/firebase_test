@@ -20,6 +20,9 @@
         </nav>
         <div id="signUpScreen">
             <h1>Sign Up Page</h1>
+            <label for="username">Name</label>
+            <input type="text" placeholder ="type your name" id='username'>
+            <br>
             <label for="email">EMAIL</label>
             <input type="email" placeholder ="type your email" id='email'>
             <br>
@@ -28,6 +31,7 @@
             <br>
             <button id='signup'>Sign Up</button>
         </div>
+        <!--send email verification-->
         <div id="emailVerification">Email verification sent! Please verify.</div>
         
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
@@ -59,9 +63,18 @@
             function signUpUser(){
                 let email = document.getElementById('email').value;
                 let password = document.getElementById('password').value;
+                let username = document.getElementById('username').value;
 
                 firebase.auth().createUserWithEmailAndPassword(email, password)
                     .then(()=> {
+                        user = firebase.auth().currentUser;
+                        user.updateProfile({
+                            displayName: username
+                        }).then(function(){
+                            console.log(user.displayName)
+                        }) .catch(e=>{
+                            console.log(e)
+                        });
                         firebase.auth().currentUser.sendEmailVerification()
                         .then(()=> {
                             document.getElementById('signUpScreen').style.display='none';
