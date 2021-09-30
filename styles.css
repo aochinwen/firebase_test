@@ -1,24 +1,25 @@
 
 #color1{
-    background-color: #594A1D;
+    background-color: #160F29;
 }
 #color2{
-    background-color: #D99A4E;
+    background-color: #246A73;
 }
 #color3{
-    background-color: #BF9A78;
+    background-color: #368F8B;
 }
 #color4{
-    background-color: #F2E8DF;
+    background-color: #F3DFC1;
 }
 #color5{
-    background-color: #A68877;
+    background-color: #DDBEA8;
 }
 body {
     margin-left:auto;
     margin-right:auto;
     display: block;
     justify-content: center;
+    background-color: #F3DFC1;
     
 }
 
@@ -42,6 +43,7 @@ div{
     margin: auto;
     border-radius: 5px;
     text-align: center;
+    color: #246A73;
     font-family: 'Roboto mono';
 }
 
@@ -147,7 +149,7 @@ nav {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #594A1D;
+    background-color: #160F29;
     overflow-x: hidden;
     padding-top: 20px;
 }
